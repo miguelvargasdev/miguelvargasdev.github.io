@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait_2.png';
+---
+
+<section class="max-w-[45rem] mx-auto my-6 bg-white dark:bg-zinc-900 rounded-2xl px-8 py-10 transition-colors duration-500">
+  <div class="flex flex-row justify-between items-center gap-6 max-sm:flex-col-reverse max-sm:items-center max-sm:gap-8">
+    <div class="flex flex-col gap-2 max-sm:items-center max-sm:text-center">
+      <h1 class="text-5xl font-semibold text-brand max-sm:text-4xl">Miguel Vargas</h1>
+      <h3 class="text-lg italic text-gray-500 dark:text-gray-400 font-normal">software engineer</h3>
+    </div>
+    <Image
+      src={portrait}
+      alt="Drawn portrait of Miguel Vargas"
+      class="h-60 w-auto rounded-2xl border-2 border-[#D6D9DF] dark:border-zinc-700 bg-[#f6f6f6] dark:bg-[#131319]"
+      loading="eager"
+    />
+  </div>
+</section>
