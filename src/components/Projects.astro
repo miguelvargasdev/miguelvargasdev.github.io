@@ -1,0 +1,83 @@
+---
+import { Badge } from '@/components/ui/badge';
+// TODO: Replace the first two project entries with your new projects.
+// Add name, description, href, imageSrc, and set isLive/isPlaceholder accordingly.
+const projects = [
+  {
+    name: 'Board Game Companion App',
+    description: 'Health and stat tracker companion App for the board game Hero: Tales of the Tomes.',
+    href: 'https://app.talesofthetomes.com',
+    imageSrc: '/img/talesofthetomes.png',
+    isLive: true,
+    isPlaceholder: false,
+  },
+  {
+    name: 'realtime_chat',
+    description: 'a private, self-destructing chat room.',
+    href: 'https://chat.miguelvargas.dev/',
+    imageSrc: '/img/realtime_chat.png',
+    isLive: true,
+    isPlaceholder: false,
+  },
+  {
+    name: 'Weather',
+    description: 'Weather app built to practice React with live API data.',
+    href: 'https://www.miguelvargas.dev/weather-checker/',
+    imageSrc: '/img/weather-checkergif.gif',
+    isLive: true,
+    isPlaceholder: false,
+  },
+];
+---
+
+<section class="max-w-[45rem] mx-auto my-6 bg-white dark:bg-zinc-900 rounded-2xl px-8 py-10 transition-colors duration-500">
+  <div class="flex items-center gap-2 mb-6">
+    <svg width="42" height="42" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3B3F">
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path d="M22 8v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7h19a1 1 0 0 1 1 1zm-9.586-3H2V4a1 1 0 0 1 1-1h7.414l2 2z" />
+    </svg>
+    <h2 class="text-2xl font-semibold text-[#4B5463] dark:text-white">Projects</h2>
+  </div>
+
+  <div class="grid grid-cols-2 gap-8 max-sm:grid-cols-1">
+    {projects.map((project) =>
+      project.isPlaceholder ? (
+        <div class="flex flex-col border-2 border-dashed border-[#D6D9DF] dark:border-zinc-700 rounded-lg h-[21rem] items-center justify-center text-center p-4">
+          <h4 class="text-[#4B5463] dark:text-white text-base font-medium mb-2">{project.name}</h4>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">{project.description}</p>
+        </div>
+      ) : (
+        <a
+          href={project.href}
+          class="flex flex-col border border-[#D6D9DF] dark:border-zinc-700 rounded-lg overflow-hidden shadow-[rgba(0,0,0,0.1)_0px_10px_15px_-3px,rgba(0,0,0,0.05)_0px_4px_6px_-2px] hover:bg-[#e7e7e7] dark:hover:bg-zinc-800 active:bg-[#ff6d6f] transition-colors duration-500 cursor-pointer select-none no-underline"
+        >
+          <div class="flex bg-[#f6f6f6] dark:bg-[#131319] w-full h-52 border-b border-[#D6D9DF] dark:border-zinc-700 overflow-hidden">
+            {project.imageSrc && (
+              <img
+                src={project.imageSrc}
+                alt={project.name}
+                class="max-w-full max-h-[75%] m-auto mb-0 rounded-t-lg"
+                loading="lazy"
+              />
+            )}
+          </div>
+          <div class="w-full min-h-[8rem] p-4">
+            <div class="flex justify-between items-start">
+              <h4 class="text-[#4B5463] dark:text-white font-medium py-1">{project.name}</h4>
+              {project.isLive && (
+                <Badge>LIVE</Badge>
+              )}
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">{project.description}</p>
+          </div>
+        </a>
+      )
+    )}
+
+    <!-- Coming soon card -->
+    <div class="flex flex-col border-2 border-dashed border-[#D6D9DF] dark:border-zinc-700 rounded-lg h-[21rem] items-center justify-center text-center p-4">
+      <h4 class="text-[#4B5463] dark:text-white text-base font-medium mb-2">More coming soon!</h4>
+      <p class="text-gray-500 dark:text-gray-400 text-sm">...</p>
+    </div>
+  </div>
+</section>

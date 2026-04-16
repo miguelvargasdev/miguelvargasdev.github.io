@@ -1,0 +1,25 @@
+---
+import Contact from './Contact.astro';
+---
+
+<section class="max-w-[45rem] mx-auto my-6 bg-white dark:bg-zinc-900 rounded-2xl px-8 py-10 transition-colors duration-500">
+  <div class="flex items-center gap-2 mb-6">
+    <svg width="42" height="42" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3B3F">
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path d="M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" />
+    </svg>
+    <h2 class="text-2xl font-semibold text-[#4B5463] dark:text-white">About Me</h2>
+  </div>
+
+  <p class="text-gray-700 dark:text-gray-400 mb-4 leading-relaxed">
+    I'm <strong class="font-bold">Miguel Vargas</strong>, a software engineer based in Philadelphia, PA.
+  </p>
+  <p class="text-gray-700 dark:text-gray-400 mb-4 leading-relaxed">
+    Most recently, I worked as a Software Engineer at <strong class="font-semibold text-[#4B5463] dark:text-white">Invent</strong>, where I collaborated closely with external partner developers to design and ship robust, scalable web solutions. That experience sharpened both my technical skills and my ability to communicate effectively across teams.
+  </p>
+  <p class="text-gray-700 dark:text-gray-400 leading-relaxed">
+    I'm a growth-oriented individual with a relentless drive to learn. My mission is to continue solving complex problems, work with great people, and develop <strong class="font-bold">efficient, responsive, and beautiful</strong> products that stand the test of time.
+  </p>
+
+  <Contact />
+</section>
